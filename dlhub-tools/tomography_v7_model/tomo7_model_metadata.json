@@ -1,0 +1,124 @@
+{
+  "datacite": {
+    "creators": [
+      {
+        "givenName": "Tiberiu",
+        "familyName": "Stan",
+        "affiliations": "Northwestern University"
+      },
+      {
+        "givenName": "Zachary T.",
+        "familyName": "Thompson",
+        "affiliations": "Northwestern University"
+      },
+      {
+        "givenName": "Peter W.",
+        "familyName": "Voorhees",
+        "affiliations": "Northwestern University"
+      },
+      {
+        "givenName": "Joshua",
+        "familyName": "Pritz",
+        "affiliations": "Northwestern University"
+      }
+    ],
+    "titles": [
+      {
+        "title": "Dendrite Segmentation Tomography UNet Model"
+      }
+    ],
+    "publisher": "DLHub",
+    "publicationYear": "2020",
+    "identifier": {
+      "identifier": "10.YET/UNASSIGNED",
+      "identifierType": "DOI"
+    },
+    "descriptions": [
+      {
+        "description": "A deep learning model, based on UNet, to detect dendrites in an X-ray tomography image",
+        "descriptionType": "Abstract"
+      }
+    ],
+    "fundingReferences": [],
+    "relatedIdentifiers": [
+      {
+        "relatedIdentifier": "10.1016/j.matchar.2020.110119",
+        "relatedIdentifierType": "DOI",
+        "relationType": "IsDescribedBy"
+      }
+    ],
+    "alternateIdentifiers": [],
+    "rightsList": [],
+    "resourceType": {
+      "resourceTypeGeneral": "InteractiveResource"
+    }
+  },
+  "dlhub": {
+    "version": "0.8.5",
+    "domains": [
+      "materials science"
+    ],
+    "visible_to": [
+      "public"
+    ],
+    "name": "dendrite_tomography_unet",
+    "files": {
+      "other": [
+        "dlhub_apply.py",
+        "models.py",
+        "tomography_v7.pth",
+        "tomography_v7.txt"
+      ]
+    },
+    "type": "servable",
+    "dependencies": {
+      "python": {
+        "torch": "1.6.0",
+        "torchvision": "0.7.0",
+        "numpy": "1.19.1"
+      }
+    }
+  },
+  "servable": {
+    "methods": {
+      "run": {
+        "input": {
+          "type": "list",
+          "description": "List of numpy arrays for image files",
+          "item_type": {
+            "type": "ndarray",
+            "description": "Image",
+            "shape": [
+              null,
+              null,
+              3
+            ]
+          }
+        },
+        "output": {
+          "type": "list",
+          "description": "List of numpy arrays of completed segmentations",
+          "item_type": {
+            "type": "ndarray",
+            "description": "Segmentation",
+            "shape": [
+              null,
+              null
+            ]
+          }
+        },
+        "parameters": {
+          "model_file": "tomography_v7.pth",
+          "norms_file": "tomography_v7.txt"
+        },
+        "method_details": {
+          "method_name": "apply",
+          "module": "dlhub_apply",
+          "autobatch": false
+        }
+      }
+    },
+    "shim": "python.PythonStaticMethodServable",
+    "type": "Python static method"
+  }
+}
