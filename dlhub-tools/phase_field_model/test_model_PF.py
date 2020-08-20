@@ -17,6 +17,8 @@ for img_path in files:
 
 dl = DLHubClient()
 
+dl._fx_client.max_request_size = 50 * 1024 ** 3
+
 outs = dl.run('npruyne_globusid/dendrite_pf_segnet', imgs)
 
 num = 0
