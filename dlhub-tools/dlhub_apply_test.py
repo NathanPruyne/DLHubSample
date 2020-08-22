@@ -28,7 +28,7 @@ def apply_model(model_file, norms_file, path, outpath):
         num += 1
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Apply images to a model via DLHub")
+    parser = argparse.ArgumentParser(description="Apply images to a model locally given model and norms files")
 
     parser.add_argument('model_file', help='.pth file containing model information')
     parser.add_argument('norms_file', help='.txt file containing norms information')
