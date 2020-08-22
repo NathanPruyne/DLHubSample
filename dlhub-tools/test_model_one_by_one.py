@@ -19,8 +19,8 @@ def apply_model(path, model, outpath):
 
         outs = dl.run(model, imgs)
 
-        print("Saving " + str(img_path.split('/')[-1]))
-        plt.imsave(outpath + str(img_path.split('/')[-1]), outs[0], cmap='gray')
+        print("Saving " + os.path.split(files[num])[1])
+        plt.imsave(outpath + os.path.split(files[num])[1], seg, cmap='gray')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Apply images to a model via DLHub one image at a time")

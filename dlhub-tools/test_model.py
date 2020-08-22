@@ -25,8 +25,8 @@ def apply_model(path, model, outpath):
 
     for seg in outs:
 
-        print("Saving " + str(files[num].split('/')[-1]))
-        plt.imsave(outpath + str(files[num].split('/')[-1]), seg, cmap='gray')
+        print("Saving " + os.path.split(files[num])[1])
+        plt.imsave(outpath + os.path.split(files[num])[1], seg, cmap='gray')
         num += 1
 
 if __name__ == "__main__":
