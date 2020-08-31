@@ -9,6 +9,10 @@ Uploading and utilizing models to DLHub revolves around the `dlhub_apply.py` fil
 
 **IMPORTANT**: Many files in this folder depend on functionalities in the core MatSeg package, and thus should be stored in the same folder as the core MatSeg files in order to function properly.
 
+## Installation
+
+The only new requirement needed is the `dlhub-sdk` package, which has been added to `requirements.txt` so a call of `pip3 install -r requirements.txt` will add the package.
+
 ## Generating model and norms files
 
 The first step to using DLHub with MatSeg is to generating a .pth file that contains all necessary data to create the model and a text file containing the average and standard deviation needed in the batch normalization part of the processing.

@@ -1,0 +1,10 @@
+argparse
+dlhub-sdk
+matplotlib
+numpy
+Pillow
+statistics
+torch
+torchnet
+torchvision
+tqdm
